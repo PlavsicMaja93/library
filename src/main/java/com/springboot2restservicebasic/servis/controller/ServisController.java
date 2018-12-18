@@ -32,10 +32,6 @@ public class ServisController {
     public List retrieveAllIznKnjige() {
         List<Knjiga> iznajmljene = new ArrayList<>();
         List<Servis> servisi = servisRepository.findAll();
-//        for (int i = 0; i < servisi.size(); i++) {
-//
-//            iznajmljene.add(servisi.get(i).getKnjiga());
-//        }+
         for (Servis servis : servisi) {
             iznajmljene.add(servis.getKnjiga());
         }
@@ -89,19 +85,6 @@ public class ServisController {
         }
         return iznajmljene;
     }
-
-  /* @GetMapping ("/servis/test")
-    public List<String> nazivi(){
-       List<String> iznajmljene = new ArrayList<>();
-       List<Servis> servisi=servisRepository.findAll();
-        for (int i = 0; i < servisi.size(); i++) {
-
-            iznajmljene.add(servisi.get(i).getKnjiga().getNaziv());
-        }
-       return iznajmljene;
-   }*/
-
-
 }
 
 
