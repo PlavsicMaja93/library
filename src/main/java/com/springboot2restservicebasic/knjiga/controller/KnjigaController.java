@@ -30,10 +30,11 @@ public class KnjigaController {
     }
 
     @PostMapping ("/knjiga/dodajknjigu")
-    public Map dodaj (@RequestBody Knjiga kn) {
+    public Map dodaj(@RequestBody Knjiga kn) {
         knjigaRepository.save(kn);
         Map response = new HashMap();
         response.put("success", true);
+
         return response;
     }
 
@@ -41,7 +42,7 @@ public class KnjigaController {
     public int brojKnjigaAutora(@PathVariable long autorId) {
         Knjiga k=new Knjiga();
         int b=k.brKnjigaAutora(knjigaRepository.findAll(), autorId);
-        return  b;
 
+        return  b;
     }
 }

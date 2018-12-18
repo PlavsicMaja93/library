@@ -24,6 +24,7 @@ public class Autor implements Serializable {
     public Set<Knjiga> getKnjiga() {
         return setKnjiga;
     }
+
     @JsonBackReference
     /*@JsonManagedReference is the forward part of reference – the one that gets serialized normally.*/
     public void setKnjiga(Set<Knjiga> setKnjiga) {
